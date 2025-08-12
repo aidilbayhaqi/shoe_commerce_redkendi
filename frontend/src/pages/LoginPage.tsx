@@ -11,22 +11,20 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
+
 
     try {
       const res = await loginApi({ email, password }); 
       login(res); 
       console.log("Current user: ", res.user); 
-      navigate("/"); // redirect setelah login
+      navigate("/");
     } catch (err: any) {
       alert(err.response?.data?.detail || "Login gagal");
-    } finally {
-      setIsLoading(false);
-    }
+    } 
   };
 
  return (
