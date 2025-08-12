@@ -55,8 +55,15 @@ Project test aplikasi e-commerce sederhana yang memungkinkan pengguna:
 # Jalankan server
 uvicorn app.main:app --reload
  
+buat file .env dan masukkan:
+- DATABASE_URL=mysql+mysqlconnector://root:@localhost:3306/shoe_commerce
+- SECRET_KEY=test123
+- ALGORITHM=HS256
+- ALLOWED_ORIGINS=http://localhost:3000,http://localhost5173
+- ACCESS_TOKEN_EXPIRE_MINUTES=120
 
-DATABASE_URL=mysql://user:pass@localhost:3306/shoe_commerce
+pada folder backend terdapat file db_shoe_commerce.sql dan bisa di import ke my sql dengan cara:
+- buka xampp lalu jalankan dan masuk ke menu import
 
 ### 🔹 2. FrontEnd (typescript + react)
 - cd frontend
